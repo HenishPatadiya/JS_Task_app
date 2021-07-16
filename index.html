@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>TODO List</title>
+</head>
+<script>
+    function checkUser() {
+        let activeUser = localStorage.getItem("active");
+        // console.log(activeUser);
+        if (activeUser == null) {
+            window.location.href = "signin.html";
+            alert("Login First !");
+        }
+    }
+</script>
+
+<body onload="checkUser()">
+    <ul>
+        <a href="index.html">
+            <li>Home</li>
+        </a>
+        <a href="profileView.html">
+            <li>Profile</li>
+        </a>
+        <li style="float: right;"><button id="logout">Logout</button></li>
+    </ul>
+    <h5>
+        <p style=" color: darkgray;" id="time"></p>
+    </h5>
+    <div class="container">
+        <div class="leftSidebar">
+            <div id="gif">
+                <img src="" alt="" id="img" width="100%">
+            </div>
+        </div>
+        <div class="main">
+            <div class="cards">
+                <h5>Enter text here:</h5>
+                <textarea class="task" id="addTxt" rows="3"></textarea>
+                <button class="button" id="addBtn">Add Note</button>
+            </div>
+            <hr>
+        </div>
+        <div class="rightSidebar">
+            <p id="cityName"></p>
+            <p id="temp"></p>
+            <p id="weather"></p>
+        </div>
+    </div>
+    <div id="note">
+        
+    </div>
+    <!-- <div class="container my-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Enter text here:</h5>
+                <div class="form-group">
+                    <textarea class="form-control" id="addTxt" rows="3"></textarea>
+                </div>
+                <button class="btn btn-success" id="addBtn">Add Note</button>
+            </div>
+        </div>
+        <h4 style="color: gray;">Your Notes :</h4>
+        <div id="notes" class="row container my-3">
+        </div>
+    </div> -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+<script src="script.js"></script>
+
+</html>

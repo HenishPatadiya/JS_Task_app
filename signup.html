@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Signup</title>
+</head>
+
+<body>
+    <h2>Sign Up</h2>
+    <form>
+        <label for="fname"><b>First name :</b></label>
+        <input type="text" name="fname" id="fname" placeholder="First name" required>
+        <br>
+        <label for="lname"><b>Last name :</b></label>
+        <input type="text" name="lname" id="lname" placeholder="Last name" required>
+        <br>
+        <label for="email"><b>Email :</b></label>
+        <input type="email" name="email" id="email" placeholder="Email" required>
+        <br>
+        <label for="mobile"><b>Mobile No. :</b></label>
+        <input type="number" name="mobile" id="mobile" placeholder="Mobile No." required>
+        <br>
+        <label for="gender"><b>Gender :</b></label>
+        <select name="gender" id="gender">
+            <option value="0">Select</option>
+            <option value="Male" id="male">Male</option>
+            <option value="Female" id="female">Female</option>
+            <option value="Other" id="other">Other</option>
+        </select>
+
+        <label for="dob"><b>Date of birth :</b></label>
+        <input type="date" name="dob" id="dob">
+        <br>
+        <label for="password"><b>Password :</b></label>
+        <input type="password" name="password" id="password" placeholder="Password" required>
+        <input type="button" onclick="checkMe()" class="button" value="Sign up">
+        <a href="signin.html">Already have an account ?</a>
+    </form>
+
+</body>
+<script src="script.js"></script>
+
+</html>
