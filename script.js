@@ -60,7 +60,7 @@ function signup() {
 
     localStorage.setItem("userData", JSON.stringify(u));
     // localStorage.setItem("active", email);
-    window.location.href = "signin.html"
+    window.location.href = "index.html"
     getNotes();
 }
 
@@ -78,7 +78,7 @@ function signin() {
     for (let i = 0; i <= getData.length; i++) {
         if ((getData[i].email == email || getData[i].mobile == email) && getData[i].password == password) {
             flag++;
-            window.location.href = "index.html";
+            window.location.href = "home.html";
             // console.log("ok");
             localStorage.setItem("active", getData[i].email);
             break;
@@ -95,7 +95,7 @@ function signin() {
 let logout = document.getElementById("logout");
 logout.addEventListener('click', function () {
     localStorage.removeItem("active");
-    window.location.href = "signin.html";
+    window.location.href = "index.html";
 });
 
 // Notes
@@ -206,7 +206,7 @@ function fillDetails() {
     
     // console.log(activeUser);
     if (activeUser == null) {
-        window.location.href = "signin.html";
+        window.location.href = "index.html";
         alert("Login First !");
     }
     else {
@@ -258,7 +258,7 @@ function userDetails() {
     let activeUser = localStorage.getItem("active");
 
     if (activeUser == null) {
-        window.location.href = "signin.html";
+        window.location.href = "index.html";
         alert("Login First !");
     }
     else {
@@ -274,18 +274,17 @@ function userDetails() {
     }
 }
 
-(function deleteAccount() {
-    let uData = JSON.parse(localStorage.getItem("userData"));
-    let activeUser = localStorage.getItem("active");
-    for (var i = 0; i < uData.length; i++) {
-        if (uData[i].email == activeUser) {
-            break;
-        }
-    }
-    // console.log(i);
-    uData.splice(i, 1);
-    console.log(uData);
-})()
+// (function deleteAccount() {
+//     let uData = JSON.parse(localStorage.getItem("userData"));
+//     let activeUser = localStorage.getItem("active");
+//     for (var i = 0; i < uData.length; i++) {
+//         if (uData[i].email == activeUser) {
+//             break;
+//         }
+//     }
+//     // console.log(i);
+//     //uData.splice(i, 1)
+// })()
 
 // Time
 
