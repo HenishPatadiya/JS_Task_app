@@ -235,7 +235,7 @@ function updateDetails() {
     let gender1 = document.getElementById("gender").options[document.getElementById("gender").selectedIndex].value;
     let dob1 = document.getElementById("dob").value;
     let password1 = document.getElementById("password").value;
-    console.log(uData);
+    // console.log(uData);
 
     for (let i = 0; i < uData.length; i++) {
         if (uData[i].email == activeUser) {
@@ -274,17 +274,27 @@ function userDetails() {
     }
 }
 
-// (function deleteAccount() {
-//     let uData = JSON.parse(localStorage.getItem("userData"));
-//     let activeUser = localStorage.getItem("active");
-//     for (var i = 0; i < uData.length; i++) {
-//         if (uData[i].email == activeUser) {
-//             break;
-//         }
-//     }
-//     // console.log(i);
-//     //uData.splice(i, 1)
-// })()
+function deleteAccount() {
+    let check = confirm("Are you sure ?");
+    console.log(check);
+
+    if(check) {
+        let uData = JSON.parse(localStorage.getItem("userData"));
+        let activeUser = localStorage.getItem("active");
+        for (var i = 0; i < uData.length; i++) {
+            if (uData[i].email == activeUser) {
+                break;
+            }
+        }
+        // console.log(i);
+        uData.splice(i, 1);
+        // console.log(uData);
+        localStorage
+        localStorage.setItem("userData", JSON.stringify(uData));
+        localStorage.removeItem("active");
+        window.location.href = "signup.html";
+    }
+}
 
 // Time
 
