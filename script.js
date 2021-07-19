@@ -139,7 +139,7 @@ function getNotes() {
     notesData.forEach((element, index) => {
         htmlCode +=
             `<div class="cards">
-                <h5 class="card-title">${index + 1}</h5>
+                <h5>${index + 1}</h5>
                 <textarea class="task" id="note${index}">${element}</textarea>
                 <button id="${index}" onclick="editNote(this.id)" class="btnUpdate">Edit</button>
                 <button id="${index}" onclick="markNote(this.id)" class="btnHome">Mak/Unmark</button>
@@ -155,17 +155,20 @@ function getNotes() {
     }
 }
 
-// function markNote(index) {
-//     let uData = JSON.parse(localStorage.getItem("userData"));
-//     let activeUser = localStorage.getItem("active");
-//     for (let i = 0; i < uData.length; i++) {
-//         if (uData[i].email == activeUser) {
-//             var notesData = uData[i].todo;
-//             break;
-//         }
-//     }
-//     notesData[index].classList.toggle('checked');
-// }
+function markNote(index) {
+    let uData = JSON.parse(localStorage.getItem("userData"));
+    let activeUser = localStorage.getItem("active");
+    for (let i = 0; i < uData.length; i++) {
+        if (uData[i].email == activeUser) {
+            var notesData = uData[i].todo;
+            break;
+        }
+    }
+    // console.log(notesData[index]);
+    let id = document.getElementById(`note${index}`);
+    id.classList.toggle('checked');
+
+}
 
 function deleteNote(index) {
     let uData = JSON.parse(localStorage.getItem("userData"));
