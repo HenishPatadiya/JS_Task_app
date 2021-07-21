@@ -56,9 +56,10 @@ li button {
 .task {
     width: 90%;
     margin: 10px;
-    border: 1px solid gray;
+    border: 1px solid lightgray;
     border-radius: 5px;
 }
+
 .checked {
     text-decoration: line-through;
 }
@@ -68,7 +69,6 @@ li button {
 #note {
     overflow-y: scroll;
     height: 250px;
-    width: 50%;
     margin: 0 auto;
 }
 form {
